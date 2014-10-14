@@ -1,0 +1,88 @@
+---
+title: "is607 postgreSQL Project Week 7"
+author: "Prashant B. Bhuyan"
+date: "October 13, 2014"
+output: pdf_document
+---
+
+-- Table: wikitable
+
+-- DROP TABLE wikitable;
+
+CREATE TABLE wikitable
+(
+  projectcode text,
+  pagename text,
+  pageviews numeric,
+  bytes integer
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE wikitable
+  OWNER TO postgres;
+
+-- Column: projectcode
+
+-- ALTER TABLE wikitable DROP COLUMN projectcode;
+
+ALTER TABLE wikitable ADD COLUMN projectcode text;
+
+
+-- Column: pagename
+
+-- ALTER TABLE wikitable DROP COLUMN pagename;
+
+ALTER TABLE wikitable ADD COLUMN pagename text;
+
+
+-- Column: pageviews
+
+-- ALTER TABLE wikitable DROP COLUMN pageviews;
+
+ALTER TABLE wikitable ADD COLUMN pageviews numeric;
+
+-- Column: bytes
+
+-- ALTER TABLE wikitable DROP COLUMN bytes;
+
+ALTER TABLE wikitable ADD COLUMN bytes integer;
+
+-- Query Pageviews in Descending Order
+
+SELECT * FROM wikitable ORDER BY pageviews DESC
+
+
+TOP 5 Visited Wiki Pages Based on the Data Given:
+
+1) "en";"Database";257;14268896
+
+'Database' has 257 pageviews.
+
+2) "en";"Data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAuCAIAAABmjeQ9AAAARElEQVR42mVO2wrAUAhy/f8fz%2BniVMTYQ3hLKkgGgN/IPvgIhUYYV/qogdP75J01V%2BJwrKZr/5YPcnzN3e6t7l%2B2K%2BEFX91B1daOi7sAAAAASUVORK5CYII%3D";220;1729420
+
+'Data:image/png. . .' has 220 page views.
+
+3) "en";"Data";203;8573050
+
+'Data' has 203 page views.
+
+4) "en";"Data_mining";196;15613111
+
+'Data_mining' has 196 page views.
+
+5) "en";"Data_Protection_Act_1998";174;3733159
+
+'Data_Protection_Act_1998' has 174 page views. 
+
+
+
+
+
+
+
+
+
+
+
+
